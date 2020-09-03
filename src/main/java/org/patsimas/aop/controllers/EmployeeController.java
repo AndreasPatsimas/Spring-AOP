@@ -11,10 +11,12 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/add/employee/{empId}/{firstName}/{secondName}")
+    @GetMapping("/add/employee/{empId}/{firstName}/{secondName}/{username}/{principal}")
     public Employee addEmployee(@PathVariable("empId") String empId, 
                                 @PathVariable("firstName") String firstName, 
-                                @PathVariable("secondName") String secondName) {
+                                @PathVariable("secondName") String secondName,
+                                @PathVariable("username") String username,
+                                @PathVariable("principal") String principal) {
         return employeeService.createEmployee(empId, firstName, secondName);
     }
 

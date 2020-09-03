@@ -13,9 +13,11 @@ public class CompanyController {
     @Autowired
     private CompanyService companyService;
 
-    @GetMapping("/add/company/{id}/{name}")
+    @GetMapping("/add/company/{id}/{name}/{username}/{principal}")
     public Company addCompany(@PathVariable("id") String id,
-                              @PathVariable("name") String name) {
+                              @PathVariable("name") String name,
+                              @PathVariable("username") String username,
+                              @PathVariable("principal") String principal) {
         return companyService.createCompany(id, name);
     }
 }
